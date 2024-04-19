@@ -6,46 +6,52 @@ body {
     background: linear-gradient(#7e00ff, #000000);
 }
 
-h1, p {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+h1, p, a {
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
 }
 
 .app{
+    width: 95%;
+    height: auto;
+    margin: 10px;
     display: flex;
     justify-content: center;
 }
 
 .playSoundCol {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    width: 33%;
 }
 
 .playSoundCol > div {
-    background: linear-gradient(#7e00ff, #000000);
-    padding: 10px;
-    border: solid rgb(255, 255, 255) 2px;
+    padding: 5px;
+    border: solid white 2px;
     margin: 5px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    background: linear-gradient(#ffffff, #7e00ff)
 }
 
-.playSoundCol > div> button:hover {
-    border: solid rgb(255, 217, 0) 2px;
-    color: rgb(255, 217, 0);
-    font-weight: bold;
+.playSoundCol > div:active {
+    border: solid gold 2px;
 }
 
-.playSoundCol > div > button {
-    margin: 10px;
-    height: 70px;
-    width: 70px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    background-color: rgb(59, 0, 155);
+.playSoundCol > div > p {
+    text-align: center;
+}
+.playSoundCol > div > p:active {
+    color: gold;
+}
+
+.playSoundCol > div > .key {
+    opacity: 0;
+}
+
+.playSoundCol > div > p {
+    color: rgb(255, 255, 255);
 }
 
 footer {
@@ -57,42 +63,48 @@ footer {
     width: 100%;
 }
 
-footer > a {
-    color: white;
-    text-decoration: none;
-    
-}
-
-footer > a:hover {
-    font-size: large;
-}
-
 footer > a > img {
-    width: 50px;
-    padding: 5px;
-    margin: 2px;
+    width: 20%;
 }
 
-footer > a > img:hover {
-    filter: drop-shadow(5px 5px 5px rgb(31, 31, 31));
-}
-
-
-@media only screen and (max-width: 600px) {
-    .app {
+@media screen and (min-width: 760px) {
+    .playSoundCol > div {
+        height: 50%;
+        background: linear-gradient(#7e00ff, #000000);
+        padding: 10px;
+        border: solid rgb(255, 255, 255) 2px;
+        margin: 5px;
         display: flex;
         justify-content: center;
-        /* flex-direction: column; */
-        flex-wrap: wrap;
-        
+        flex-direction: column;
     }
-
-    .playSoundCol {
-        width: 33%;
-        /* box-sizing: border-box; */
+    
+    .playSoundCol > div:hover {
+        border: solid rgb(255, 217, 0) 2px;
+        color: rgb(255, 217, 0);
+        font-weight: bold;
     }
-
-    .playSoundCol > div {
-        align-self: center;
+    
+    .playSoundCol > div > .key {
+        opacity: 100;
+    }
+    
+    footer {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    
+    footer > a > img {
+        width: 50px;
+        padding: 5px;
+        margin: 2px;
+    }
+    
+    footer > a > img:hover {
+        filter: drop-shadow(3px 3px 5px rgb(94, 94, 94));
     }
 }
